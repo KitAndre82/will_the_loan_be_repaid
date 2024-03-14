@@ -1,17 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
 # load file with description of data in columns
-data_info = pd.read_csv('/Users/andrew/Downloads/TensorFlow_FILES/DATA/lending_club_info.csv',
-                 index_col='LoanStatNew')
+data_info = pd.read_csv('/lending_club_info.csv', index_col='LoanStatNew')
 
 # display description of features
 print(data_info['Description'])
@@ -21,7 +14,7 @@ def feat_info(col_name):
     print(data_info.loc[col_name]['Description'])
 
 # load dataset
-df = pd.read_csv('/Users/andrew/Downloads/TensorFlow_FILES/DATA/lending_club_loan_two.csv')
+df = pd.read_csv('/lending_club_loan_two.csv')
 
 ## EDA
 
@@ -178,10 +171,6 @@ df_v2['loan_status'].value_counts()/len(df)
 
 # Transforming outcome variable into binary
 df_v2['loan_status'] = df_v2['loan_status'].map({'Charged Off':1,'Fully Paid':0})
-
-
-# In[2]:
-
 
 ## Building Artificial Neural Network
 
